@@ -1,0 +1,230 @@
+/*
+ * ============================================================================
+ * 文件名称：variables.css
+ * 文件用途：全局设计令牌（Design Tokens）定义 —— 颜色 / 字号 / 间距 / 阴影 / 圆角 / 缓动
+ * 管理内容：
+ *   - :root 中性基础变量（灰度 / 字号 / 间距 / 阴影 / 圆角 / 缓动）
+ *   - [domain--*] 三领域主题色板（蓝 / 灰 / 紫）
+ *   - 标签分类色板（方法 / 软件 / 领域）
+ *   - 响应式断点（作为参考，实际在对应 CSS 文件中使用）
+ * 修改入口：
+ *   - 调整品牌色：修改 :root 中的颜色变量
+ *   - 新增主题：添加新 domain--* 规则块
+ *   - 调整字号层级：修改 --text-* 变量
+ *   - 新增标签类型：添加新 tag 分类色
+ * 注意事项：
+ *   - 所有颜色使用此文件中的变量，禁止在组件 CSS 中硬编码颜色
+ *   - clamp() 函数用于响应式字号（最小 → 理想 → 最大）
+ *   - 主题切换通过 html[class*="domain--"] 选择器驱动
+ * ============================================================================
+ */
+
+/*
+ * ====================================================================
+ * :root 中性基础变量
+ * ====================================================================
+ */
+:root {
+  /* ——— 灰度色板 ——— */
+  --gray-50:  #fafafa;
+  --gray-100: #f5f5f5;
+  --gray-200: #e8e8e8;
+  --gray-300: #d4d4d4;
+  --gray-400: #a3a3a3;
+  --gray-500: #737373;
+  --gray-600: #525252;
+  --gray-700: #404040;
+  --gray-800: #262626;
+  --gray-900: #171717;
+  --gray-950: #0a0a0a;
+
+  /* ——— 语义色 ——— */
+  --text-primary:    var(--gray-900);
+  --text-secondary:  var(--gray-500);
+  --text-tertiary:   var(--gray-400);
+  --text-inverse:    #ffffff;
+  --bg-primary:      #ffffff;
+  --bg-secondary:    var(--gray-50);
+  --bg-tertiary:     var(--gray-100);
+  --border-default:  var(--gray-200);
+  --border-light:    var(--gray-100);
+
+  /* ——— 基础主题色（默认蓝色系，为领域卡片预留） ——— */
+  --theme-blue-50:   #eff6ff;
+  --theme-blue-100:  #dbeafe;
+  --theme-blue-200:  #bfdbfe;
+  --theme-blue-400:  #60a5fa;
+  --theme-blue-500:  #3b82f6;
+  --theme-blue-600:  #2563eb;
+  --theme-blue-700:  #1d4ed8;
+
+  /* ——— 灰色主题色（Mechanical Design） ——— */
+  --theme-gray-50:   #f9fafb;
+  --theme-gray-100:  #f3f4f6;
+  --theme-gray-200:  #e5e7eb;
+  --theme-gray-400:  #9ca3af;
+  --theme-gray-500:  #6b7280;
+  --theme-gray-600:  #4b5563;
+  --theme-gray-700:  #374151;
+  --theme-gray-800:  #1f2937;
+
+  /* ——— 土棕金色主题色（Mechanical Design） ——— */
+  --theme-gold-50:   #fdf8f3;
+  --theme-gold-100:  #f7ead8;
+  --theme-gold-200:  #ecd4b3;
+  --theme-gold-300:  #dcbc8e;
+  --theme-gold-400:  #c9a068;
+  --theme-gold-500:  #b38741;
+  --theme-gold-600:  #956d2f;
+  --theme-gold-700:  #735222;
+  --theme-gold-800:  #4f3816;
+
+  /* ——— 紫色主题色（Engineering Automation） ——— */
+  --theme-purple-50:  #faf5ff;
+  --theme-purple-100: #f3e8ff;
+  --theme-purple-200: #e9d5ff;
+  --theme-purple-400: #c084fc;
+  --theme-purple-500: #a855f7;
+  --theme-purple-600: #9333ea;
+  --theme-purple-700: #7e22ce;
+  --theme-purple-800: #6b21a8;
+
+  /* ——— 标签分类色 ——— */
+  --tag-method-bg:      #e0f2fe;
+  --tag-method-text:    #0369a1;
+  --tag-method-border:  #bae6fd;
+  --tag-software-bg:    #f0fdf4;
+  --tag-software-text:  #15803d;
+  --tag-software-border:#bbf7d0;
+  --tag-domain-bg:      #faf5ff;
+  --tag-domain-text:    #7e22ce;
+  --tag-domain-border:  #e9d5ff;
+
+  /* ——— 字号（响应式 clamp） ——— */
+  --text-xs:   clamp(0.7rem, 1.4vw, 0.75rem);
+  --text-sm:   clamp(0.8rem, 1.4vw, 0.875rem);
+  --text-base: clamp(0.9rem, 1.6vw, 1rem);
+  --text-md:   clamp(0.95rem, 1.6vw, 1.063rem);
+  --text-lg:   clamp(1.05rem, 1.8vw, 1.2rem);
+  --text-xl:   clamp(1.2rem, 2.2vw, 1.5rem);
+  --text-2xl:  clamp(1.4rem, 2.6vw, 1.75rem);
+  --text-3xl:  clamp(1.65rem, 3.2vw, 2.25rem);
+  --text-4xl:  clamp(2rem, 4.2vw, 2.75rem);
+  --text-5xl:  clamp(2.5rem, 5.2vw, 3.5rem);
+
+  /* ——— 间距（4px 网格，V3 增宽少数键位） ——— */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-5:  1.25rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* ——— 内容宽度（V3.1 进一步增宽以消除不自然换行） ——— */
+  --content-sm:  680px;
+  --content-md:  920px;
+  --content-lg:  1140px;
+  --content-xl:  1240px;
+  --content-max: 1320px;
+
+  /* ——— 阴影（Apple 风格多层） ——— */
+  --shadow-xs: 0 1px 2px rgba(0,0,0,.04);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+  --shadow-md: 0 4px 6px rgba(0,0,0,.06), 0 2px 4px rgba(0,0,0,.05);
+  --shadow-lg: 0 10px 15px rgba(0,0,0,.08), 0 4px 6px rgba(0,0,0,.04);
+  --shadow-xl: 0 20px 25px rgba(0,0,0,.1), 0 10px 10px rgba(0,0,0,.04);
+  --shadow-card: 0 1px 4px rgba(0,0,0,.05), 0 4px 12px rgba(0,0,0,.06);
+
+  /* ——— 圆角 ——— */
+  --radius-sm:  0.375rem;
+  --radius-md:  0.5rem;
+  --radius-lg:  0.75rem;
+  --radius-xl:  1rem;
+  --radius-2xl: 1.25rem;
+  --radius-full: 9999px;
+
+  /* ——— 缓动曲线 ——— */
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ——— 通用 ——— */
+  --transition-fast: 0.15s var(--ease-out);
+  --transition-base: 0.25s var(--ease-out);
+  --transition-slow: 0.4s var(--ease-out);
+
+  /* ——— 字体 ——— */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'SF Mono', 'Fira Code', 'JetBrains Mono', monospace;
+}
+
+/* ====================================================================
+ * 领域主题：Computational Mechanics — 蓝色/青色体系
+ * ==================================================================== */
+html.domain--blue {
+  --theme-primary:   var(--theme-blue-600);
+  --theme-primary-hover: var(--theme-blue-700);
+  --theme-primary-light: var(--theme-blue-500);
+  --theme-primary-dark:  var(--theme-blue-700);
+  --theme-primary-bg:  var(--theme-blue-50);
+  --theme-primary-bg2: var(--theme-blue-100);
+  --theme-secondary: var(--theme-blue-400);
+  --theme-surface:   var(--theme-blue-50);
+  --theme-border:    var(--theme-blue-200);
+  --theme-gradient:  linear-gradient(135deg, var(--theme-blue-500), var(--theme-blue-600), #0891b2);
+  --theme-gradient-text: linear-gradient(135deg, var(--theme-blue-600), #0891b2);
+  --theme-gradient-hero:  linear-gradient(180deg, #0c1929 0%, #0f2847 40%, #fff 100%);
+  --hero-bg-top:    #0c1929;
+  --hero-bg-bottom: #0f2847;
+  --theme-accent:   #0891b2;
+}
+
+/* ====================================================================
+ * 领域主题：Mechanical Design — 淡土棕金色体系
+ * ==================================================================== */
+html.domain--gold {
+  --theme-primary:   var(--theme-gold-600);
+  --theme-primary-hover: var(--theme-gold-700);
+  --theme-primary-light: var(--theme-gold-500);
+  --theme-primary-dark:  var(--theme-gold-700);
+  --theme-primary-bg:  var(--theme-gold-100);
+  --theme-primary-bg2: var(--theme-gold-200);
+  --theme-secondary: var(--theme-gold-400);
+  --theme-surface:   var(--theme-gold-50);
+  --theme-border:    var(--theme-gold-200);
+  --theme-gradient:  linear-gradient(135deg, var(--theme-gold-500), var(--theme-gold-600), var(--theme-gold-700));
+  --theme-gradient-text: linear-gradient(135deg, var(--theme-gold-600), var(--theme-gold-700));
+  --theme-gradient-hero:  linear-gradient(180deg, #2a1f15 0%, #3d2d1e 40%, #fff 100%);
+  --hero-bg-top:    #2a1f15;
+  --hero-bg-bottom: #3d2d1e;
+  --theme-accent:   var(--theme-gold-400);
+}
+
+/* ====================================================================
+ * 领域主题：Engineering Automation — 紫色/靛蓝体系
+ * ==================================================================== */
+html.domain--purple {
+  --theme-primary:   var(--theme-purple-600);
+  --theme-primary-hover: var(--theme-purple-700);
+  --theme-primary-light: var(--theme-purple-500);
+  --theme-primary-dark:  var(--theme-purple-800);
+  --theme-primary-bg:  var(--theme-purple-50);
+  --theme-primary-bg2: var(--theme-purple-100);
+  --theme-secondary: var(--theme-purple-400);
+  --theme-surface:   var(--theme-purple-50);
+  --theme-border:    var(--theme-purple-200);
+  --theme-gradient:  linear-gradient(135deg, var(--theme-purple-500), var(--theme-purple-600), #4f46e5);
+  --theme-gradient-text: linear-gradient(135deg, var(--theme-purple-600), #6366f1);
+  --theme-gradient-hero:  linear-gradient(180deg, #1a1025 0%, #2d1b3d 40%, #fff 100%);
+  --hero-bg-top:    #1a1025;
+  --hero-bg-bottom: #2d1b3d;
+  --theme-accent:   #6366f1;
+}
