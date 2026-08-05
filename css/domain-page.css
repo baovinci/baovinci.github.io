@@ -1,0 +1,169 @@
+/*
+ * ============================================================================
+ * 文件名称：domain-page.css
+ * 文件用途：领域页面专用样式 — 领域 Hero / 子领域网格 / 项目列表 / 领域导航
+ * 管理内容：
+ *   - .domain-hero 领域页 Hero 区域
+ *   - .domain-hero__stats 统计数据行
+ *   - .domain-tabs 子领域导航
+ *   - .domain-projects 项目列表
+ *   - .domain-nav-bottom 底部三领域快速导航
+ *   - 响应式断点
+ * 修改入口：
+ *   - Hero 标题格式：修改 .domain-hero__title
+ *   - 领域导航卡片颜色：每个领域使用自己的 data-* 选择器覆盖
+ * 注意事项：
+ *   - 此文件在 domain-*.html 页面中加载
+ *   - 颜色使用 variables.css 中的领域主题变量
+ * ============================================================================
+ */
+
+/* ====================================================================
+ * 领域 Hero
+ * ==================================================================== */
+.domain-hero {
+  position: relative; min-height: 55vh;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--theme-gradient-hero);
+  overflow: hidden;
+  padding: var(--space-20) var(--space-6);
+}
+
+.domain-hero__deco {
+  position: absolute; pointer-events: none;
+}
+.domain-hero__deco--ring {
+  top: 20%; right: 8%; width: 300px; height: 300px;
+  border: 1px solid rgba(255,255,255,.06); border-radius: 50%;
+  animation: heroFloat 12s var(--ease-in-out) infinite;
+}
+.domain-hero__deco--dots {
+  bottom: 15%; left: 6%; width: 220px; height: 220px;
+  background-image: radial-gradient(circle, rgba(255,255,255,.08) 1px, transparent 1px);
+  background-size: 20px 20px;
+  animation: heroFloat 14s var(--ease-in-out) infinite reverse;
+}
+
+.domain-hero__content {
+  position: relative; z-index: 2; text-align: center;
+  max-width: var(--content-lg);
+  padding: 0 var(--space-4);
+}
+
+.domain-hero__pre-title {
+  display: inline-block; font-size: var(--text-xs); font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(255,255,255,.45);
+  margin-bottom: var(--space-5);
+}
+
+.domain-hero__title {
+  font-size: var(--text-4xl); font-weight: 700; letter-spacing: -0.03em;
+  line-height: 1.15;
+  background: linear-gradient(180deg, #fff 20%, rgba(255,255,255,.7) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: var(--space-6);
+}
+
+.domain-hero__desc {
+  font-size: var(--text-lg); line-height: 1.65;
+  color: rgba(255,255,255,.6);
+  max-width: 60ch;
+  margin: 0 auto var(--space-8);
+}
+
+.domain-hero__stats {
+  display: flex; justify-content: center; gap: var(--space-10); flex-wrap: wrap;
+}
+.domain-hero__stat { text-align: center; }
+.domain-hero__stat-value {
+  font-size: var(--text-2xl); font-weight: 700; color: #fff;
+  letter-spacing: -0.02em;
+}
+.domain-hero__stat-label {
+  font-size: var(--text-xs); color: rgba(255,255,255,.5);
+  text-transform: uppercase; letter-spacing: 0.08em;
+}
+
+@media (max-width: 768px) {
+  .domain-hero { min-height: 50vh; }
+  .domain-hero__title { font-size: var(--text-3xl); }
+  .domain-hero__desc { font-size: var(--text-base); max-width: 46ch; }
+  .domain-hero__stats { gap: var(--space-6); }
+}
+
+/* ====================================================================
+ * 子领域导航
+ * ==================================================================== */
+.domain-tabs {
+  display: flex; justify-content: center; gap: var(--space-2);
+  padding: 0 var(--space-6); margin: var(--space-8) 0;
+  flex-wrap: wrap;
+}
+.domain-tabs .container {
+  max-width: var(--content-lg); margin: 0 auto;
+  display: flex; gap: var(--space-2); flex-wrap: wrap; justify-content: center;
+}
+
+/* ====================================================================
+ * 领域项目列表
+ * ==================================================================== */
+.domain-projects {
+  padding: var(--space-16) var(--space-6);
+}
+.domain-projects .container {
+  max-width: var(--content-xl); margin: 0 auto;
+}
+.domain-projects__grid {
+  display: flex; flex-direction: column; gap: var(--space-6);
+  max-width: var(--content-xl); margin: 0 auto;
+}
+
+/* ====================================================================
+ * 底部领域导航
+ * ==================================================================== */
+.domain-nav-bottom {
+  padding: var(--space-16) var(--space-6);
+  background: var(--bg-secondary);
+}
+.domain-nav-bottom .container {
+  max-width: var(--content-xl); margin: 0 auto; text-align: center;
+}
+.domain-nav-bottom__title {
+  font-size: var(--text-xl); font-weight: 700; letter-spacing: -0.02em;
+  margin-bottom: var(--space-8);
+}
+.domain-nav-bottom__grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5); max-width: var(--content-lg); margin: 0 auto;
+}
+.domain-nav-card {
+  background: var(--bg-primary); border-radius: var(--radius-lg);
+  padding: var(--space-6); box-shadow: var(--shadow-xs);
+  border: 1px solid var(--border-light);
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+}
+.domain-nav-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+.domain-nav-card__title {
+  font-size: var(--text-base); font-weight: 600; letter-spacing: -0.01em;
+  margin-bottom: var(--space-2);
+}
+.domain-nav-card__desc {
+  font-size: var(--text-xs); color: var(--text-tertiary); line-height: 1.5;
+}
+.domain-nav-card--active {
+  border-color: var(--theme-primary);
+  background: var(--theme-primary-bg);
+}
+.domain-nav-card--active .domain-nav-card__title { color: var(--theme-primary); }
+
+@media (max-width: 1024px) {
+  .domain-nav-bottom__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .domain-nav-bottom__grid { grid-template-columns: 1fr; }
+}

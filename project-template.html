@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="domain--blue">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Project template — Bao Vinci Engineering Portfolio">
+    <title>Project Title | Bao Vinci</title>
+
+    <!-- ============================================================
+    项目模板：创建新项目时复制此文件
+    修改指引：
+      1. 修改 <html class="domain--(blue|gray|purple)">
+         blue  = Computational Mechanics
+         gray  = Mechanical Design
+         purple= Engineering Automation
+      2. 填充 8 个 Section 的内容
+      3. 修改标签 — 使用 .tag--method / .tag--software / .tag--domain 分类
+      4. 更新上一页/下一页导航链接
+      5. 在 data/projects.json 中追加项目条目
+    ============================================================ -->
+
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/project-page.css">
+</head>
+<body>
+
+    <nav class="nav" id="nav">
+        <div class="nav__inner">
+            <a href="index.html" class="nav__logo">Bao Vinci</a>
+            <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation menu">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="nav__links" id="navLinks">
+                <a href="index.html" class="nav__link" data-i18n="nav.home">Home</a>
+                <a href="domain-computational-mechanics.html" class="nav__link" data-i18n="nav.computationalMechanics">Computational Mechanics</a>
+                <a href="domain-mechanical-design.html" class="nav__link" data-i18n="nav.mechanicalDesign">Mechanical Design</a>
+                <a href="domain-intelligent-engineering.html" class="nav__link" data-i18n="nav.intelligentEngineering">Engineering Automation</a>
+                <button type="button" class="nav__link nav__link--lang" data-i18n-toggle data-i18n="nav.langToggle">中文</button>
+            </div>
+        </div>
+    </nav>
+    <div class="nav__overlay" id="navOverlay"></div>
+
+    <!-- 项目 Hero — 替换图片和文本 -->
+    <section class="project-hero">
+        <div class="project-hero__banner" data-lightbox>
+            <img src="assets/xxx/hero.jpg" alt="Project hero image" onerror="this.parentElement.style.display='none'">
+        </div>
+        <div class="project-hero__content">
+            <p class="project-hero__tag"><!-- 领域名称 --></p>
+            <h1 class="project-hero__title"><!-- 项目标题 --></h1>
+            <p class="project-hero__subtitle"><!-- 项目简介 --></p>
+            <div class="tags-group" style="justify-content:center;margin-top:var(--space-5);">
+                <span class="tag tag--method"><!-- 方法标签 如 CFD, FEA, ML --></span>
+                <span class="tag tag--software"><!-- 软件标签 如 ANSYS Fluent, MATLAB --></span>
+                <span class="tag tag--domain"><!-- 领域标签 如 Aerodynamics, Robotics --></span>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-progress" id="sectionProgress">
+        <div class="section-progress__dot active"></div>
+        <div class="section-progress__dot"></div>
+        <div class="section-progress__dot"></div>
+    </div>
+
+    <!-- Section 01 — 项目概述 -->
+    <section class="project-section" id="section-01">
+        <div class="project-section__inner">
+            <p class="project-section__label">01 — Overview</p>
+            <h2 class="project-section__title"><!-- 章节标题 --></h2>
+            <p class="project-section__text"><!-- 内容 --></p>
+            <!-- 可选：关键指标 -->
+            <div class="results-highlight" style="margin-top:var(--space-8);">
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-card__value"><!-- 数值 --></div>
+                        <div class="result-card__label"><!-- 标签 --></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 02 — 方法论 -->
+    <section class="project-section" id="section-02">
+        <div class="project-section__inner">
+            <p class="project-section__label">02 — Methodology</p>
+            <h2 class="project-section__title"><!-- 章节标题 --></h2>
+            <p class="project-section__text"><!-- 内容 --></p>
+        </div>
+    </section>
+
+    <!-- ...添加更多 Section (03–07) 根据需要... -->
+
+    <!-- 项目间导航 -->
+    <section class="project-nav">
+        <div class="container">
+            <a href="#" class="project-nav__link">← Previous: Project Name</a>
+            <a href="domain-computational-mechanics.html" class="project-nav__back"><!-- 返回领域 --></a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__inner">
+            <p class="footer__text">&copy; 2026 Bao Vinci. All rights reserved.</p>
+            <div class="footer__links">
+                <a href="#" class="footer__link">Academic Profile</a>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg class="back-to-top__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+    </button>
+
+    <script src="js/main.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/animation.js"></script>
+    <script src="js/viewer-manager.js"></script>
+    <script src="js/i18n.js" defer></script>
+</body>
+</html>

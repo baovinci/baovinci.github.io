@@ -1,0 +1,462 @@
+{
+  "_schema": "v2",
+  "_note": "双语翻译数据文件。每个文本键值格式为 { \"en\": \"...\", \"zh\": \"...\" }，中英文对照紧邻排列，便于逐个板块修改。前端通过 data-i18n 属性自动匹配。",
+  "site": {
+    "title": {
+      "en": "Bao Vinci | Engineering Portfolio",
+      "zh": "Bao Vinci | 工程作品集"
+    },
+    "description": {
+      "en": "Simulation-Driven Mechanical Engineering Portfolio — Computational Mechanics, Mechanical Design, Engineering Automation",
+      "zh": "仿真驱动机械工程作品集 — 计算力学 · 机械设计 · 工程自动化"
+    },
+    "author": {
+      "en": "Bao Vinci",
+      "zh": "Bao Vinci"
+    }
+  },
+  "nav": {
+    "home": {
+      "en": "Home",
+      "zh": "首页"
+    },
+    "computationalMechanics": {
+      "en": "Computational Mechanics",
+      "zh": "计算力学"
+    },
+    "mechanicalDesign": {
+      "en": "Mechanical Design",
+      "zh": "机械设计"
+    },
+    "intelligentEngineering": {
+      "en": "Engineering Automation",
+      "zh": "工程自动化"
+    },
+    "langToggle": {
+      "en": "中文",
+      "zh": "EN"
+    }
+  },
+  "hero": {
+    "preTitle": {
+      "en": "Engineering Portfolio",
+      "zh": "工程作品集"
+    },
+    "title": {
+      "en": "Simulation-Driven Mechanical Engineering",
+      "zh": "仿真驱动机械工程"
+    },
+    "subtitle": {
+      "en": "Combining physics-based simulation, mechanical design, and engineering automation<br>to develop reliable solutions through numerical analysis, optimization, and digital workflows.",
+      "zh": "结合计算力学、机械设计与工程自动化<br>通过数值模拟、结构优化和数字化工作流解决复杂工程问题。"
+    },
+    "cta": {
+      "en": "View My Work",
+      "zh": "查看作品"
+    }
+  },
+  "domains": {
+    "label": {
+      "en": "Engineering Domains",
+      "zh": "工程领域"
+    },
+    "title": {
+      "en": "Three Pillars of Expertise",
+      "zh": "三大专业支柱"
+    },
+    "desc": {
+      "en": "Each domain represents a distinct methodology and toolchain, unified by rigorous physics-based reasoning and computational thinking.",
+      "zh": "每个领域代表一种独特的方法论和工具链，统一于严谨的物理推理和计算思维。"
+    },
+    "computationalMechanics": {
+      "title": {
+        "en": "Computational Mechanics",
+        "zh": "计算力学"
+      },
+      "desc": {
+        "en": "FEA, nonlinear mechanics, and numerical simulation — applying finite element methods to predict structural response, failure modes, and material behavior under complex loading.",
+        "zh": "有限元分析、非线性力学与数值模拟，利用计算方法预测结构响应、材料行为以及复杂载荷下的工程性能。"
+      },
+      "link": {
+        "en": "Explore Domain",
+        "zh": "探索领域"
+      }
+    },
+    "mechanicalDesign": {
+      "title": {
+        "en": "Mechanical Design",
+        "zh": "机械设计"
+      },
+      "desc": {
+        "en": "CAD modeling, mechanical structures, and design optimization — from conceptual design to manufacturable engineering solutions.",
+        "zh": "机械结构设计、CAD建模与设计优化，覆盖概念设计、工程验证以及面向制造的机械解决方案。"
+      },
+      "link": {
+        "en": "Explore Domain",
+        "zh": "探索领域"
+      }
+    },
+    "intelligentEngineering": {
+      "title": {
+        "en": "Engineering Automation",
+        "zh": "工程自动化"
+      },
+      "desc": {
+        "en": "Python-based engineering automation, parametric modeling, and simulation workflow development — improving efficiency through computational tools.",
+        "zh": "基于Python的工程自动化、参数化建模与仿真流程开发，提升工程分析效率与设计迭代能力。"
+      },
+      "link": {
+        "en": "Explore Domain",
+        "zh": "探索领域"
+      }
+    }
+  },
+  "projects": {
+    "label": {
+      "en": "Featured Projects",
+      "zh": "精选项目"
+    },
+    "title": {
+      "en": "Selected Engineering Work",
+      "zh": "精选工程作品"
+    },
+    "desc": {
+      "en": "A curated selection of computational and design projects demonstrating analytical rigor, simulation methodology, and engineering problem-solving.",
+      "zh": "精选计算与设计项目，展示分析严谨性、仿真方法论和工程问题解决能力。"
+    },
+    "emptyDesc": {
+      "en": "A selection of engineering projects is currently being prepared. Each project page will include detailed methodology, results, and technical insights.",
+      "zh": "一批工程项目正在准备中。每个项目页面将包含详细的方法论、结果与技术洞察。"
+    }
+  },
+  "tags": {
+    "method": {
+      "en": "Method",
+      "zh": "方法"
+    },
+    "software": {
+      "en": "Software",
+      "zh": "软件"
+    },
+    "domain": {
+      "en": "Domain",
+      "zh": "领域"
+    }
+  },
+  "capabilities": {
+    "label": {
+      "en": "Core Capabilities",
+      "zh": "核心能力"
+    },
+    "title": {
+      "en": "Engineering Methodology",
+      "zh": "工程方法论"
+    },
+    "physicsBased": {
+      "title": {
+        "en": "Physics-Based Simulation",
+        "zh": "物理仿真"
+      },
+      "desc": {
+        "en": "Applying finite element analysis and numerical methods to solve structural mechanics, heat transfer, and coupled-field problems with validated computational models.",
+        "zh": "应用有限元分析和数值方法解决结构力学、传热和耦合场问题，使用经过验证的计算模型。"
+      }
+    },
+    "designOptimization": {
+      "title": {
+        "en": "Design Optimization",
+        "zh": "设计优化"
+      },
+      "desc": {
+        "en": "Parametric design space exploration, structural topology optimization, and multi-objective optimization for lightweight, high-performance engineering components.",
+        "zh": "参数化设计空间探索、结构拓扑优化和多目标优化，实现轻量化高性能工程组件。"
+      }
+    },
+    "computationalPrototyping": {
+      "title": {
+        "en": "Computational Prototyping",
+        "zh": "计算原型"
+      },
+      "desc": {
+        "en": "Full digital workflow from CAD modeling to simulation-driven iteration, reducing physical prototyping cycles and accelerating design convergence.",
+        "zh": "从CAD建模到仿真驱动迭代的完整数字化工作流，减少物理原型周期，加速设计收敛。"
+      }
+    },
+    "engineeringAutomation": {
+      "title": {
+        "en": "Engineering Automation",
+        "zh": "工程自动化"
+      },
+      "desc": {
+        "en": "Python-based workflow automation for simulation pre/post-processing, parametric studies, and batch analysis — transforming repetitive tasks into efficient scripts.",
+        "zh": "基于Python的工作流自动化，涵盖仿真前后处理、参数化研究和批量分析 — 将重复性任务转化为高效脚本。"
+      }
+    },
+    "dataDriven": {
+      "title": {
+        "en": "Data-Driven Analysis",
+        "zh": "数据分析"
+      },
+      "desc": {
+        "en": "Post-processing, uncertainty quantification, and statistical validation of simulation results for robust engineering conclusions.",
+        "zh": "仿真结果的后处理、不确定性量化和统计验证，为工程结论提供可靠依据。"
+      }
+    },
+    "systemIntegration": {
+      "title": {
+        "en": "System Integration",
+        "zh": "系统集成"
+      },
+      "desc": {
+        "en": "End-to-end automation of simulation pipelines, coupling FEA solvers with optimization frameworks and visualization tools.",
+        "zh": "仿真管道的端到端自动化，将FEA求解器与优化框架和可视化工具耦合。"
+      }
+    }
+  },
+  "tools": {
+    "label": {
+      "en": "Technical Toolkit",
+      "zh": "技术工具"
+    },
+    "title": {
+      "en": "Software & Languages",
+      "zh": "软件与语言"
+    },
+    "softwareHeader": {
+      "en": "Simulation & Design Software",
+      "zh": "仿真与设计软件"
+    },
+    "languagesHeader": {
+      "en": "Programming Languages",
+      "zh": "编程语言"
+    },
+    "abaqus": {
+      "en": "Abaqus",
+      "zh": "Abaqus"
+    },
+    "ansysMechanical": {
+      "en": "ANSYS Mechanical",
+      "zh": "ANSYS Mechanical"
+    },
+    "matlab": {
+      "en": "MATLAB",
+      "zh": "MATLAB"
+    },
+    "solidworks": {
+      "en": "SolidWorks",
+      "zh": "SolidWorks"
+    },
+    "paraview": {
+      "en": "ParaView",
+      "zh": "ParaView"
+    },
+    "python": {
+      "en": "Python",
+      "zh": "Python"
+    },
+    "cpp": {
+      "en": "C / C++",
+      "zh": "C / C++"
+    }
+  },
+  "domainPages": {
+    "common": {
+      "projects": {
+        "en": "Projects",
+        "zh": "项目"
+      },
+      "coreMethods": {
+        "en": "Core Methods",
+        "zh": "核心方法"
+      },
+      "capability": {
+        "en": "Capability",
+        "zh": "能力"
+      },
+      "all": {
+        "en": "All",
+        "zh": "全部"
+      },
+      "projectsComingSoon": {
+        "en": "Projects Coming Soon",
+        "zh": "项目即将上线"
+      },
+      "exploreOtherDomains": {
+        "en": "Explore Other Domains",
+        "zh": "探索其他领域"
+      },
+      "emptyDescFallback": {
+        "en": "Engineering projects are being prepared. Check back soon for detailed case studies and technical analyses.",
+        "zh": "工程项目正在准备中。敬请期待详细案例研究与技术分析。"
+      }
+    },
+    "computationalMechanics": {
+      "domainNumber": {
+        "en": "Domain 01",
+        "zh": "领域 01"
+      },
+      "title": {
+        "en": "Computational Mechanics",
+        "zh": "计算力学"
+      },
+      "desc": {
+        "en": "A deep foundation in computational solid mechanics — spanning nonlinear FEA, material modeling, and numerical methods for structural analysis. Emphasis on Abaqus and MATLAB for simulation workflows.",
+        "zh": "扎实的计算固体力学基础 — 涵盖非线性有限元、材料建模与结构分析数值方法。侧重使用 Abaqus 与 MATLAB 构建仿真工作流。"
+      },
+      "coreMethodsValue": {
+        "en": "Nonlinear FEA",
+        "zh": "非线性有限元"
+      },
+      "capabilityValue": {
+        "en": "Simulation",
+        "zh": "结构仿真"
+      },
+      "tabs": {
+        "all": {
+          "en": "All",
+          "zh": "全部"
+        },
+        "fea": {
+          "en": "Nonlinear FEA",
+          "zh": "非线性有限元"
+        },
+        "material": {
+          "en": "Material Modeling",
+          "zh": "材料建模"
+        },
+        "contact": {
+          "en": "Contact Mechanics",
+          "zh": "接触力学"
+        },
+        "dynamics": {
+          "en": "Structural Dynamics",
+          "zh": "结构动力学"
+        }
+      },
+      "emptyDesc": {
+        "en": "Computational mechanics projects are being prepared. Check back soon for nonlinear FEA, material modeling, and structural dynamics case studies.",
+        "zh": "计算力学项目正在准备中。敬请期待非线性有限元、材料建模与结构动力学案例。"
+      },
+      "navCardDesc": {
+        "en": "Nonlinear FEA, Material Modeling, Contact Mechanics, Structural Dynamics",
+        "zh": "非线性有限元 · 材料建模 · 接触力学 · 结构动力学"
+      }
+    },
+    "mechanicalDesign": {
+      "domainNumber": {
+        "en": "Domain 02",
+        "zh": "领域 02"
+      },
+      "title": {
+        "en": "Mechanical Design",
+        "zh": "机械设计"
+      },
+      "desc": {
+        "en": "From precision CAD modeling to simulation-driven structural design — combining parametric modeling with FEA validation to create optimized, manufacturable mechanical components and assemblies.",
+        "zh": "从精密 CAD 建模到仿真驱动结构设计 — 结合参数化建模与有限元验证，打造可制造、可优化的机械组件与装配体。"
+      },
+      "coreMethodsValue": {
+        "en": "CAD / FEA",
+        "zh": "CAD / FEA"
+      },
+      "capabilityValue": {
+        "en": "Design",
+        "zh": "结构设计"
+      },
+      "tabs": {
+        "all": {
+          "en": "All",
+          "zh": "全部"
+        },
+        "cad": {
+          "en": "CAD",
+          "zh": "CAD"
+        },
+        "manufacturing": {
+          "en": "Manufacturing",
+          "zh": "制造"
+        },
+        "structure": {
+          "en": "Structure",
+          "zh": "结构"
+        }
+      },
+      "emptyDesc": {
+        "en": "Mechanical design projects are being prepared. Check back soon for CAD, parametric modeling, and structural case studies.",
+        "zh": "机械设计项目正在准备中。敬请期待 CAD、参数化建模与结构案例。"
+      },
+      "navCardDesc": {
+        "en": "CAD, Parametric Modeling, FEA Validation, Manufacturable Design",
+        "zh": "CAD · 参数化建模 · FEA 验证 · 可制造设计"
+      }
+    },
+    "intelligentEngineering": {
+      "domainNumber": {
+        "en": "Domain 03",
+        "zh": "领域 03"
+      },
+      "title": {
+        "en": "Engineering Automation",
+        "zh": "工程自动化"
+      },
+      "desc": {
+        "en": "Leveraging Python and MATLAB to automate simulation workflows, perform parametric design studies, and apply optimization algorithms — transforming engineering analysis from manual repetition to systematic computation.",
+        "zh": "利用 Python 与 MATLAB 实现仿真工作流自动化、参数化设计研究与优化算法应用 — 将工程分析从手工重复转变为系统化计算。"
+      },
+      "coreMethodsValue": {
+        "en": "Automation / Optimization",
+        "zh": "自动化 / 优化"
+      },
+      "capabilityValue": {
+        "en": "Engineering Automation",
+        "zh": "工程自动化"
+      },
+      "tabs": {
+        "all": {
+          "en": "All",
+          "zh": "全部"
+        },
+        "automation": {
+          "en": "Automation",
+          "zh": "自动化"
+        },
+        "optimization": {
+          "en": "Optimization",
+          "zh": "优化"
+        },
+        "parametric": {
+          "en": "Parametric Design",
+          "zh": "参数化设计"
+        }
+      },
+      "emptyDesc": {
+        "en": "Engineering automation projects are being prepared. Check back soon for automation, parametric design, and optimization case studies.",
+        "zh": "工程自动化项目正在准备中。敬请期待自动化、参数化设计与优化案例。"
+      },
+      "navCardDesc": {
+        "en": "Python/MATLAB Automation, Parametric Design, Optimization Algorithms",
+        "zh": "Python/MATLAB 自动化 · 参数化设计 · 优化算法"
+      }
+    }
+  },
+  "cta": {
+    "title": {
+      "en": "Let's Build Something Together",
+      "zh": "共同合作"
+    },
+    "desc": {
+      "en": "Open to research collaboration, PhD applications, and engineering opportunities in computational mechanics and simulation-driven design.",
+      "zh": "欢迎研究合作、博士申请及计算力学与仿真驱动设计领域的工程机会。"
+    }
+  },
+  "footer": {
+    "copyright": {
+      "en": "© 2026 Bao Vinci. All rights reserved.",
+      "zh": "© 2026 Bao Vinci. 保留所有权利。"
+    },
+    "academicProfile": {
+      "en": "Academic Profile",
+      "zh": "学术主页"
+    }
+  }
+}

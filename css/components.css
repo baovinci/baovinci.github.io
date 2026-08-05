@@ -1,0 +1,484 @@
+/*
+ * ============================================================================
+ * 文件名称：components.css
+ * 文件用途：全局可复用组件 — 按钮 / 标签 / 卡片 / 骨架屏 / 画廊 / 工具卡片 / 成果卡片 / 洞察块 / 进度指示器 / 空状态
+ * 管理内容：
+ *   - .btn / .btn--* 按钮体系
+ *   - .tag / .tag--* 统一标签分类系统
+ *   - .project-card 项目卡片（精选 / 列表 / 占位）
+ *   - .gallery 画廊组件
+ *   - .video-player 视频播放器
+ *   - .tools-row-wrap / .tools-row / .tool-card 技术栈横向滚动
+ *   - .results-highlight / .result-card 成果数据
+ *   - .project-section__insight 洞察块
+ *   - .compare-container 对比展示
+ *   - .skeleton 骨架屏
+ *   - .section-progress 侧边进度
+ *   - .empty-state 空状态（替代项目加载报错）
+ * 修改入口：
+ *   - 调整按钮样式：修改 .btn 相关规则
+ *   - 修改标签类型：在 .tag--* 中定义新类别
+ *   - 调整卡片 Hover：修改 .project-card:hover
+ * 注意事项：
+ *   - 所有组件使用 variables.css 中的设计令牌
+ *   - 禁止在此文件中硬编码颜色值（除透明/黑白外）
+ * ============================================================================
+ */
+
+/* ====================================================================
+ * 按钮体系
+ * ==================================================================== */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: var(--space-2); padding: 0.7rem 1.5rem;
+  font-size: var(--text-sm); font-weight: 600; letter-spacing: 0.01em;
+  border-radius: var(--radius-full);
+  transition: all 0.25s var(--ease-out);
+  cursor: pointer;
+  min-height: 44px;
+  white-space: nowrap;
+}
+
+/* 实心主按钮 */
+.btn--primary {
+  background: var(--theme-primary); color: #fff;
+  box-shadow: 0 2px 10px rgba(37, 99, 235, 0.25);
+}
+.btn--primary:hover {
+  background: var(--theme-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35);
+}
+
+/* 描边次按钮 */
+.btn--secondary {
+  background: transparent; color: var(--theme-primary);
+  border: 1.5px solid var(--theme-primary);
+}
+.btn--secondary:hover {
+  background: var(--theme-primary-bg);
+  transform: translateY(-2px);
+}
+
+/* 幽灵按钮（深色背景） */
+.btn--ghost {
+  background: rgba(255,255,255,.08); color: #fff;
+  border: 1px solid rgba(255,255,255,.2);
+}
+.btn--ghost:hover {
+  background: rgba(255,255,255,.15);
+  transform: translateY(-2px);
+}
+
+/* 小按钮 */
+.btn--sm { padding: 0.5rem 1.1rem; font-size: var(--text-xs); min-height: 36px; }
+/* 大按钮 */
+.btn--lg { padding: 0.9rem 2.2rem; font-size: var(--text-md); min-height: 48px; }
+
+/* ====================================================================
+ * 统一标签分类系统
+ * ==================================================================== */
+.tag {
+  display: inline-flex; align-items: center;
+  padding: 0.25rem 0.7rem; font-size: var(--text-xs); font-weight: 500;
+  border-radius: var(--radius-full);
+  border: 1px solid transparent;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+/* 方法标签：CFD, FEA, ML, Optimization, Topology Opt */
+.tag--method {
+  background: var(--tag-method-bg);
+  color: var(--tag-method-text);
+  border-color: var(--tag-method-border);
+}
+
+/* 软件标签：ANSYS Fluent, MATLAB, Python, SolidWorks, COMSOL */
+.tag--software {
+  background: var(--tag-software-bg);
+  color: var(--tag-software-text);
+  border-color: var(--tag-software-border);
+}
+
+/* 领域标签：Aerodynamics, Robotics, Biomedical, Combustion */
+.tag--domain {
+  background: var(--tag-domain-bg);
+  color: var(--tag-domain-text);
+  border-color: var(--tag-domain-border);
+}
+
+/* 通用标签（无类别 / 回退） */
+.tag--default {
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  border-color: var(--border-default);
+}
+
+/* ——— 标签组 ——— */
+.tags-group {
+  display: flex; flex-wrap: wrap; gap: var(--space-2);
+}
+
+/* ====================================================================
+ * 项目卡片
+ * ==================================================================== */
+
+/* 精选卡片（首页使用） */
+.project-card--featured {
+  background: var(--bg-primary); border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+  border: 1px solid var(--border-light);
+  position: relative;
+  --card-accent: var(--theme-primary);
+}
+.project-card--featured[data-domain="computational-mechanics"] { --card-accent: var(--theme-blue-600); }
+.project-card--featured[data-domain="mechanical-design"]     { --card-accent: var(--theme-gold-600); }
+.project-card--featured[data-domain="intelligent-engineering"] { --card-accent: var(--theme-purple-600); }
+
+.project-card--featured:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+.project-card--featured:focus-visible {
+  outline: none;
+}
+
+.project-card__img-wrap {
+  aspect-ratio: 16 / 10; overflow: hidden;
+  background: var(--bg-tertiary);
+}
+.project-card__img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.5s var(--ease-out);
+}
+.project-card--featured:hover .project-card__img { transform: scale(1.04); }
+
+.project-card__body {
+  padding: var(--space-5) var(--space-6);
+}
+
+/* 顶部强调色条 */
+.project-card--featured::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--theme-gradient);
+  opacity: 0; transition: opacity 0.3s var(--ease-out);
+}
+.project-card--featured:hover::before { opacity: 1; }
+
+.project-card__title {
+  font-size: var(--text-lg); font-weight: 700; letter-spacing: -0.01em;
+  margin-bottom: var(--space-2);
+}
+.project-card__desc {
+  font-size: var(--text-sm); color: var(--text-secondary);
+  line-height: 1.6; margin-bottom: var(--space-4);
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* 列表卡片（领域页使用） */
+.project-card--list {
+  background: var(--bg-primary); border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--border-light);
+  display: flex; flex-direction: row;
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+}
+.project-card--list:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+.project-card--list .project-card__img-wrap {
+  width: 240px; flex-shrink: 0; aspect-ratio: auto; min-height: 180px;
+}
+.project-card--list .project-card__body {
+  flex: 1; display: flex; flex-direction: column; justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .project-card--list { flex-direction: column; }
+  .project-card--list .project-card__img-wrap {
+    width: 100%; aspect-ratio: 16 / 10; min-height: auto;
+  }
+}
+
+/* ====================================================================
+ * 画廊组件
+ * ==================================================================== */
+.gallery { margin: var(--space-6) 0; }
+.gallery__main {
+  border-radius: var(--radius-lg); overflow: hidden;
+  margin-bottom: var(--space-4);
+  background: var(--bg-tertiary);
+  cursor: zoom-in;
+}
+.gallery__main img {
+  width: 100%; display: block; object-fit: contain;
+  max-height: 520px;
+}
+.gallery__thumbs {
+  display: flex; gap: var(--space-3); flex-wrap: wrap;
+}
+.gallery__thumb {
+  width: 80px; height: 56px; object-fit: cover;
+  border-radius: var(--radius-md);
+  border: 2px solid transparent;
+  transition: border-color var(--transition-fast), opacity var(--transition-fast);
+  cursor: pointer; opacity: .6;
+}
+.gallery__thumb:hover, .gallery__thumb.active {
+  border-color: var(--theme-primary); opacity: 1;
+}
+
+/* ====================================================================
+ * 视频播放器
+ * ==================================================================== */
+.video-player {
+  position: relative; border-radius: var(--radius-lg); overflow: hidden;
+  background: #000; margin: var(--space-6) 0;
+}
+.video-player video { width: 100%; display: block; }
+.video-player__play-overlay {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  background: rgba(0,0,0,.35); transition: opacity var(--transition-base); cursor: pointer;
+}
+.video-player__play-overlay.hidden { opacity: 0; pointer-events: none; }
+.video-player__play-btn {
+  width: 64px; height: 64px; border-radius: 50%;
+  background: rgba(255,255,255,.92); display: flex; align-items: center; justify-content: center;
+  transition: transform var(--transition-fast), background var(--transition-fast);
+}
+.video-player__play-overlay:hover .video-player__play-btn {
+  transform: scale(1.1); background: #fff;
+}
+.video-player__play-btn svg { width: 28px; height: 28px; color: #000; margin-left: 3px; }
+
+/* ====================================================================
+ * 对比展示
+ * ==================================================================== */
+.compare-container {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: var(--space-4); margin: var(--space-6) 0;
+}
+.compare-container figure {
+  border-radius: var(--radius-lg); overflow: hidden;
+  background: var(--bg-tertiary);
+}
+.compare-container img { width: 100%; display: block; }
+.compare-container figcaption {
+  font-size: var(--text-xs); color: var(--text-tertiary);
+  padding: var(--space-2) var(--space-3); text-align: center;
+}
+
+@media (max-width: 768px) {
+  .compare-container { grid-template-columns: 1fr; }
+}
+
+/* ====================================================================
+ * 技术栈卡片（横向滚动）
+ * 说明：
+ *   - .tools-row-wrap 为每行外层容器，负责背景色与箭头定位
+ *   - .tools-row 为横向滚动轨道，使用 flex + overflow-x:auto
+ *   - .tool-card--software 为软件卡片，图标为正方圆角徽章
+ *   - .tool-card--language 为语言卡片，图标为横向文字徽章（不会换行）
+ *   - 增删项：复制/删除 .tool-card 块
+ *   - 替换官方图标：将 .tool-card__icon 中的文字替换为 <svg>...</svg> 即可
+ * ==================================================================== */
+.tools-row-wrap {
+  position: relative;
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+.tools-row-wrap--software { background: var(--theme-blue-50); }
+.tools-row-wrap--languages { background: var(--theme-gray-100); }
+.tools-row-wrap:last-child { margin-bottom: 0; }
+
+.tools-row-wrap__header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+.tools-row-wrap__title {
+  font-size: var(--text-sm); font-weight: 600;
+  color: var(--text-secondary); text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* 横向滚动轨道 */
+.tools-row {
+  display: flex; gap: var(--space-5);
+  overflow-x: auto; scroll-snap-type: x mandatory;
+  scrollbar-width: none; -ms-overflow-style: none;
+  padding: var(--space-1) var(--space-1) var(--space-2);
+  margin: calc(-1 * var(--space-1));
+}
+.tools-row::-webkit-scrollbar { display: none; }
+
+.tool-card {
+  flex: 0 0 auto;
+  width: 120px;
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center;
+  scroll-snap-align: start;
+}
+.tool-card__icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  margin-bottom: var(--space-2);
+  font-weight: 700; color: var(--text-primary);
+  background: var(--bg-primary);
+  box-shadow: var(--shadow-xs);
+}
+.tool-card--software .tool-card__icon {
+  width: 48px; height: 48px;
+  border-radius: var(--radius-lg);
+  font-size: var(--text-xs);
+}
+.tool-card--language .tool-card__icon {
+  min-width: 64px; height: 32px;
+  padding: 0 var(--space-2);
+  border-radius: var(--radius-md);
+  font-size: var(--text-xs);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+.tool-card__name {
+  font-size: var(--text-xs); font-weight: 600; color: var(--text-primary);
+}
+
+/* 滚动箭头：右下，半透明，窄间距 */
+.tools-row__nav {
+  display: flex; align-items: center;
+  gap: var(--space-2);
+}
+.tools-row__btn {
+  width: 32px; height: 32px; border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: rgba(255,255,255,0.65);
+  border: 1px solid var(--border-light);
+  color: var(--text-secondary);
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: all 0.2s var(--ease-out);
+}
+.tools-row__btn:hover {
+  background: rgba(255,255,255,0.95);
+  color: var(--theme-primary);
+  border-color: var(--theme-primary);
+}
+.tools-row__btn svg { width: 16px; height: 16px; }
+
+@media (max-width: 768px) {
+  .tools-row-wrap { padding: var(--space-5); }
+  .tool-card { width: 100px; }
+  .tools-row-wrap__title { font-size: var(--text-xs); }
+}
+
+/* ====================================================================
+ * 成果数据
+ * ==================================================================== */
+.results-highlight { margin: var(--space-8) 0; }
+.results-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+}
+.result-card {
+  background: var(--theme-primary-bg); border-radius: var(--radius-lg);
+  padding: var(--space-6); text-align: center;
+  border: 1px solid var(--theme-border);
+  transition: transform 0.25s var(--ease-out);
+}
+.result-card:hover { transform: translateY(-2px); }
+.result-card__value {
+  font-size: var(--text-2xl); font-weight: 700; color: var(--theme-primary);
+  letter-spacing: -0.02em; margin-bottom: var(--space-2);
+}
+.result-card__label {
+  font-size: var(--text-xs); color: var(--text-secondary);
+  text-transform: uppercase; letter-spacing: 0.06em;
+}
+
+@media (max-width: 768px) {
+  .results-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ====================================================================
+ * 洞察块
+ * ==================================================================== */
+.project-section__insight {
+  margin: var(--space-8) 0; padding: var(--space-6) var(--space-8);
+  background: var(--theme-primary-bg); border-left: 3px solid var(--theme-primary);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+}
+.project-section__insight p {
+  font-size: var(--text-base); line-height: 1.7; color: var(--text-primary);
+  font-weight: 500; margin-bottom: var(--space-2);
+  max-width: 100%;
+}
+.project-section__insight cite {
+  font-size: var(--text-xs); color: var(--text-tertiary);
+  font-style: normal;
+}
+
+/* ====================================================================
+ * 骨架屏（加载占位）
+ * ==================================================================== */
+.skeleton {
+  background: linear-gradient(90deg, var(--bg-tertiary) 25%, var(--bg-secondary) 50%, var(--bg-tertiary) 75%);
+  background-size: 200% 100%;
+  animation: skeletonWave 1.5s ease-in-out infinite;
+  border-radius: var(--radius-md);
+}
+.skeleton--text { height: 1em; margin-bottom: var(--space-3); width: 100%; }
+.skeleton--text-short { width: 60%; }
+.skeleton--heading { height: 1.5em; width: 40%; margin-bottom: var(--space-4); }
+.skeleton--image { aspect-ratio: 16/10; width: 100%; }
+
+@keyframes skeletonWave {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ====================================================================
+ * 侧边进度指示器（桌面端项目页）
+ * ==================================================================== */
+.section-progress {
+  position: fixed; right: var(--space-6); top: 50%; transform: translateY(-50%);
+  z-index: 80; display: flex; flex-direction: column; gap: var(--space-4);
+  pointer-events: none;
+}
+.section-progress__dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--border-default);
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+.section-progress__dot.active {
+  background: var(--theme-primary); transform: scale(1.4);
+}
+
+@media (max-width: 1024px) {
+  .section-progress { display: none; }
+}
+
+/* ====================================================================
+ * 空状态（优雅替代错误提示）
+ * ==================================================================== */
+.empty-state {
+  text-align: center; padding: var(--space-16) var(--space-6);
+  max-width: 440px; margin: 0 auto;
+}
+.empty-state__icon {
+  width: 56px; height: 56px; margin: 0 auto var(--space-6);
+  color: var(--border-default);
+}
+.empty-state__title {
+  font-size: var(--text-xl); font-weight: 700; letter-spacing: -0.02em;
+  color: var(--text-primary); margin-bottom: var(--space-3);
+}
+.empty-state__desc {
+  font-size: var(--text-base); color: var(--text-tertiary);
+  line-height: 1.65;
+}

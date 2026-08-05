@@ -1,0 +1,48 @@
+{
+  "_schema": "v2",
+  "_note": "项目数据文件。title/titleZh 分别为中英文标题，desc/descZh 为简介，image 为主图路径，detailPage 为详情页文件名。新增项目时在此文件追加即可。",
+  "projects": [
+    {
+      "id": "project-001",
+      "title": "Nonlinear FEA of Elastic-Plastic Behavior",
+      "titleZh": "弹塑性非线性有限元分析",
+      "desc": "Nonlinear finite element analysis of elastic-plastic deformation in a structural component under cyclic loading, with material hardening and contact nonlinearity.",
+      "descZh": "结构件在循环载荷下的弹塑性变形非线性有限元分析，包含材料硬化和接触非线性。",
+      "image": "assets/001-fea/cover.jpg",
+      "domain": "computational-mechanics",
+      "tags": ["FEA", "Nonlinear", "Structural"],
+      "tagsZh": ["有限元", "非线性", "结构力学"],
+      "tagsType": ["method", "method", "domain"],
+      "featured": true,
+      "detailPage": "project-001-fea.html"
+    },
+    {
+      "id": "project-002",
+      "title": "Adaptive Robotic Gripper",
+      "titleZh": "自适应机器人抓爪",
+      "desc": "Design and structural analysis of an underactuated compliant gripper for delicate object manipulation, validated through FEA and 3D-printed prototypes.",
+      "descZh": "欠驱动柔顺抓爪的设计与结构分析，用于精密物体操作，通过有限元分析和3D打印原型验证。",
+      "image": "assets/002-gripper/cover.jpg",
+      "domain": "mechanical-design",
+      "tags": ["FEA", "Design", "Prototyping"],
+      "tagsZh": ["有限元", "设计", "原型"],
+      "tagsType": ["method", "domain", "domain"],
+      "featured": true,
+      "detailPage": "project-002-gripper.html"
+    },
+    {
+      "id": "project-003",
+      "title": "Structural Component Optimization",
+      "titleZh": "结构件拓扑优化",
+      "desc": "Density-based topology optimization of a structural bracket, achieving significant mass reduction while maintaining structural integrity under multi-axial loading.",
+      "descZh": "基于密度法的结构支架拓扑优化，在多轴载荷下实现显著减重并保持结构完整性。",
+      "image": "assets/003-topology/cover.jpg",
+      "domain": "intelligent-engineering",
+      "tags": ["Topology Opt", "FEA", "Optimization"],
+      "tagsZh": ["拓扑优化", "有限元", "优化"],
+      "tagsType": ["method", "method", "method"],
+      "featured": true,
+      "detailPage": "project-003-topology.html"
+    }
+  ]
+}
