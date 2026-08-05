@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="domain--blue">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bao Vinci — Engineering Portfolio: Computational Mechanics, Mechanical Design, Engineering Automation">
+    <title>Bao Vinci | Engineering Portfolio</title>
+
+    <!-- 全局设计令牌与主题变量 -->
+    <link rel="stylesheet" href="css/variables.css">
+    <!-- 全局重置与排版 -->
+    <link rel="stylesheet" href="css/global.css">
+    <!-- 全局动画 -->
+    <link rel="stylesheet" href="css/animation.css">
+    <!-- 全局可复用组件 -->
+    <link rel="stylesheet" href="css/components.css">
+    <!-- 首页专用样式 -->
+    <link rel="stylesheet" href="css/homepage.css">
+
+    <!-- 内联 SVG 图标集 -->
+</head>
+<body>
+
+    <!-- ============================================================
+    导航栏 — 全局固定顶部
+    ============================================================ -->
+    <nav class="nav" id="nav">
+        <div class="nav__inner">
+            <a href="index.html" class="nav__logo">Bao Vinci</a>
+
+            <!-- 移动端汉堡菜单按钮 -->
+            <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation menu">
+                <span></span><span></span><span></span>
+            </button>
+
+            <div class="nav__links" id="navLinks">
+                <a href="index.html" class="nav__link nav__link--active" data-i18n="nav.home">Home</a>
+                <a href="domain-computational-mechanics.html" class="nav__link" data-i18n="nav.computationalMechanics">Computational Mechanics</a>
+                <a href="domain-mechanical-design.html" class="nav__link" data-i18n="nav.mechanicalDesign">Mechanical Design</a>
+                <a href="domain-intelligent-engineering.html" class="nav__link" data-i18n="nav.intelligentEngineering">Engineering Automation</a>
+                <button type="button" class="nav__link nav__link--lang" data-i18n-toggle data-i18n="nav.langToggle">中文</button>
+            </div>
+        </div>
+    </nav>
+    <!-- 移动端导航遮罩 -->
+    <div class="nav__overlay" id="navOverlay"></div>
+
+    <!-- ============================================================
+    Hero 区域 — 首页视觉核心
+    注意：已移除原滚动指示器，消除与按钮的视觉冲突
+    ============================================================ -->
+    <section class="hero">
+        <div class="hero__content container">
+            <p class="hero__pre-title animate-in" data-i18n="hero.preTitle">Engineering Portfolio</p>
+            <h1 class="hero__title animate-in delay-100" data-i18n="hero.title">Simulation-Driven Mechanical Engineering</h1>
+            <p class="hero__subtitle animate-in delay-200" data-i18n="hero.subtitle">Combining physics-based simulation, mechanical design, and engineering automation to develop reliable solutions through numerical analysis, optimization, and digital workflows.</p>
+            <div class="hero__actions animate-in delay-300">
+                <a href="#projects-highlight" class="btn btn--primary" data-i18n="hero.cta">View My Work</a>
+            </div>
+        </div>
+        <div class="hero__visual" aria-hidden="true">
+            <div class="hero__mesh"></div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    Engineering Domains — 三大领域差异化入口
+    data-domain 属性驱动每张卡片独特的颜色体系
+    ============================================================ -->
+    <section class="domains-section" id="domains">
+        <div class="container">
+            <div class="section-header animate-in">
+                <p class="section-header__label" data-i18n="domains.label">Engineering Domains</p>
+                <h2 class="section-header__title" data-i18n="domains.title">Three Pillars of Expertise</h2>
+                <p class="section-header__desc" data-i18n="domains.desc">
+                    Each domain represents a distinct methodology and toolchain,
+                    unified by rigorous physics-based reasoning and computational thinking.
+                </p>
+            </div>
+
+            <div class="domains-grid">
+                <!-- 计算力学 — 蓝色/青色体系 -->
+                <a href="domain-computational-mechanics.html"
+                   class="domain-card animate-in delay-200"
+                   data-domain="computational-mechanics">
+                    <div class="domain-card__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v18h18"/><path d="M7 16l4-8 3 6 4-10"/></svg>
+                    </div>
+                    <h3 class="domain-card__title" data-i18n="domains.computationalMechanics.title">Computational Mechanics</h3>
+                    <p class="domain-card__desc" data-i18n="domains.computationalMechanics.desc">
+                        FEA, nonlinear mechanics, and numerical simulation — applying finite element methods to predict structural response, failure modes, and material behavior under complex loading.
+                    </p>
+                    <span class="domain-card__link" data-i18n="domains.computationalMechanics.link">
+                        Explore Domain
+                        <svg class="domain-card__link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </span>
+                </a>
+
+                <!-- 机械设计 — 灰色/金属感体系 -->
+                <a href="domain-mechanical-design.html"
+                   class="domain-card animate-in delay-300"
+                   data-domain="mechanical-design">
+                    <div class="domain-card__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+                    </div>
+                    <h3 class="domain-card__title" data-i18n="domains.mechanicalDesign.title">Mechanical Design</h3>
+                    <p class="domain-card__desc" data-i18n="domains.mechanicalDesign.desc">
+                        CAD modeling, mechanical structures, and design optimization — from conceptual design to manufacturable engineering solutions.
+                    </p>
+                    <span class="domain-card__link" data-i18n="domains.mechanicalDesign.link">
+                        Explore Domain
+                        <svg class="domain-card__link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </span>
+                </a>
+
+                <!-- 工程自动化 — 紫色/靛蓝体系 -->
+                <a href="domain-intelligent-engineering.html"
+                   class="domain-card animate-in delay-400"
+                   data-domain="intelligent-engineering">
+                    <div class="domain-card__icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 13h6M9 17h4"/></svg>
+                    </div>
+                    <h3 class="domain-card__title" data-i18n="domains.intelligentEngineering.title">Engineering Automation</h3>
+                    <p class="domain-card__desc" data-i18n="domains.intelligentEngineering.desc">
+                        Python-based engineering automation, parametric modeling, and simulation workflow development — improving efficiency through computational tools.
+                    </p>
+                    <span class="domain-card__link" data-i18n="domains.intelligentEngineering.link">
+                        Explore Domain
+                        <svg class="domain-card__link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    精选项目 — 由 JS 动态渲染
+    ============================================================ -->
+    <section class="projects-highlight" id="projects-highlight">
+        <div class="container">
+            <div class="section-header animate-in">
+                <p class="section-header__label" data-i18n="projects.label">Featured Projects</p>
+                <h2 class="section-header__title" data-i18n="projects.title">Selected Engineering Work</h2>
+                <p class="section-header__desc" data-i18n="projects.desc">
+                    A curated selection of computational and design projects demonstrating
+                    analytical rigor, simulation methodology, and engineering problem-solving.
+                </p>
+            </div>
+            <!-- 标签分类图例 -->
+            <div class="tag-legend">
+                <span class="tag-legend__item">
+                    <span class="tag-legend__swatch tag-legend__swatch--method"></span>
+                    <span data-i18n="tags.method">Method</span>
+                </span>
+                <span class="tag-legend__item">
+                    <span class="tag-legend__swatch tag-legend__swatch--software"></span>
+                    <span data-i18n="tags.software">Software</span>
+                </span>
+                <span class="tag-legend__item">
+                    <span class="tag-legend__swatch tag-legend__swatch--domain"></span>
+                    <span data-i18n="tags.domain">Domain</span>
+                </span>
+            </div>
+            <div id="featuredProjects" class="projects-featured-grid">
+                <!-- JS 动态填充 -->
+            </div>
+            <!-- 轮播导航按钮 -->
+            <div class="projects-carousel__nav">
+                <button class="projects-carousel__btn projects-carousel__btn--prev" aria-label="Previous projects">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+                </button>
+                <button class="projects-carousel__btn projects-carousel__btn--next" aria-label="Next projects">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    核心能力（Engineering Methodology）
+    说明：
+      - 当前为简洁白底卡片，无彩色装饰
+      - 如需恢复图标或色条，可在 .capability-card 中插入对应元素
+    ============================================================ -->
+    <section class="capabilities-section">
+        <div class="container">
+            <div class="section-header animate-in">
+                <p class="section-header__label" data-i18n="capabilities.label">Core Capabilities</p>
+                <h2 class="section-header__title" data-i18n="capabilities.title">Engineering Methodology</h2>
+            </div>
+            <div class="capabilities-grid">
+                <div class="capability-card animate-in delay-100">
+                    <h3 class="capability-card__title" data-i18n="capabilities.physicsBased.title">Physics-Based Simulation</h3>
+                    <p class="capability-card__desc" data-i18n="capabilities.physicsBased.desc">
+                        Applying finite element analysis and numerical methods to solve structural mechanics, heat transfer, and coupled-field problems with validated computational models.
+                    </p>
+                </div>
+                <div class="capability-card animate-in delay-200">
+                    <h3 class="capability-card__title" data-i18n="capabilities.designOptimization.title">Design Optimization</h3>
+                    <p class="capability-card__desc" data-i18n="capabilities.designOptimization.desc">
+                        Topology optimization, parametric design space exploration, and
+                        multi-objective optimization for lightweight, high-performance structures.
+                    </p>
+                </div>
+                <div class="capability-card animate-in delay-300">
+                    <h3 class="capability-card__title" data-i18n="capabilities.computationalPrototyping.title">Computational Prototyping</h3>
+                    <p class="capability-card__desc" data-i18n="capabilities.computationalPrototyping.desc">
+                        Full digital workflow from CAD modeling to simulation-driven iteration,
+                        reducing physical prototyping cycles and accelerating design convergence.
+                    </p>
+                </div>
+                <div class="capability-card animate-in delay-400">
+                    <h3 class="capability-card__title" data-i18n="capabilities.engineeringAutomation.title">Engineering Automation</h3>
+                    <p class="capability-card__desc" data-i18n="capabilities.engineeringAutomation.desc">
+                        Python-based workflow automation for simulation pre/post-processing, parametric studies, and batch analysis — transforming repetitive tasks into efficient scripts.
+                    </p>
+                </div>
+                <div class="capability-card animate-in delay-300">
+                    <h3 class="capability-card__title" data-i18n="capabilities.dataDriven.title">Data-Driven Analysis</h3>
+                    <p class="capability-card__desc" data-i18n="capabilities.dataDriven.desc">
+                        Post-processing, uncertainty quantification, and statistical validation
+                        of simulation results for robust engineering conclusions.
+                    </p>
+                </div>
+                <div class="capability-card animate-in delay-400">
+                    <h3 class="capability-card__title" data-i18n="capabilities.systemIntegration.title">System Integration</h3>
+                    <p class="capability-card__desc" data-i18n="capabilities.systemIntegration.desc">
+                        End-to-end automation of simulation pipelines, coupling multiphysics
+                        solvers with optimization frameworks and visualization tools.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    技术栈（Software & Languages）
+    说明：
+      - 本区域分为两个横向滚动行：软件行 + 语言行
+      - .tools-row-wrap 控制该行的背景色；.tools-row 为滚动轨道
+      - .tool-card--software：正方圆角图标 + 下方名称
+      - .tool-card--language：横向文字徽章 + 下方名称（适合 PYTHON / C++ 等）
+      - 增删项：复制/删除 .tool-card 块，卡片会自动加入对应滚动行
+      - 替换官方图标：将 .tool-card__icon 中的文字替换为 <svg>...</svg> 即可
+    ============================================================ -->
+    <section class="tools-section">
+        <div class="container">
+            <div class="section-header animate-in">
+                <p class="section-header__label" data-i18n="tools.label">Technical Toolkit</p>
+                <h2 class="section-header__title" data-i18n="tools.title">Software &amp; Languages</h2>
+            </div>
+
+            <!-- 软件行：淡蓝背景，右下半透明箭头 -->
+            <div class="tools-row-wrap tools-row-wrap--software">
+                <div class="tools-row-wrap__header">
+                    <h3 class="tools-row-wrap__title" data-i18n="tools.softwareHeader">Simulation &amp; Design Software</h3>
+                    <div class="tools-row__nav">
+                        <button class="tools-row__btn tools-row__btn--prev" aria-label="Previous software">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+                        </button>
+                        <button class="tools-row__btn tools-row__btn--next" aria-label="Next software">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="tools-row">
+                    <div class="tool-card tool-card--software">
+                        <div class="tool-card__icon">Ab</div>
+                        <div class="tool-card__name" data-i18n="tools.abaqus">Abaqus</div>
+                    </div>
+                    <div class="tool-card tool-card--software">
+                        <div class="tool-card__icon">AM</div>
+                        <div class="tool-card__name" data-i18n="tools.ansysMechanical">ANSYS Mechanical</div>
+                    </div>
+                    <div class="tool-card tool-card--software">
+                        <div class="tool-card__icon">Ma</div>
+                        <div class="tool-card__name" data-i18n="tools.matlab">MATLAB</div>
+                    </div>
+                    <div class="tool-card tool-card--software">
+                        <div class="tool-card__icon">SW</div>
+                        <div class="tool-card__name" data-i18n="tools.solidworks">SolidWorks</div>
+                    </div>
+                    <div class="tool-card tool-card--software">
+                        <div class="tool-card__icon">Pv</div>
+                        <div class="tool-card__name" data-i18n="tools.paraview">ParaView</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 语言行：淡灰背景，右下半透明箭头 -->
+            <div class="tools-row-wrap tools-row-wrap--languages">
+                <div class="tools-row-wrap__header">
+                    <h3 class="tools-row-wrap__title" data-i18n="tools.languagesHeader">Programming Languages</h3>
+                    <div class="tools-row__nav">
+                        <button class="tools-row__btn tools-row__btn--prev" aria-label="Previous language">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+                        </button>
+                        <button class="tools-row__btn tools-row__btn--next" aria-label="Next language">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="tools-row">
+                    <div class="tool-card tool-card--language">
+                        <div class="tool-card__icon">PYTHON</div>
+                        <div class="tool-card__name" data-i18n="tools.python">Python</div>
+                    </div>
+                    <div class="tool-card tool-card--language">
+                        <div class="tool-card__icon">MATLAB</div>
+                        <div class="tool-card__name" data-i18n="tools.matlab">MATLAB</div>
+                    </div>
+                    <div class="tool-card tool-card--language">
+                        <div class="tool-card__icon">C / C++</div>
+                        <div class="tool-card__name" data-i18n="tools.cpp">C / C++</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    底部 CTA
+    ============================================================ -->
+    <section class="cta-section">
+        <div class="container animate-in">
+            <h2 class="cta-section__title" data-i18n="cta.title">Let's Build Something Together</h2>
+            <p class="cta-section__desc" data-i18n="cta.desc">Open to research collaboration, PhD applications, and engineering opportunities in computational mechanics and simulation-driven design.</p>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    页脚
+    ============================================================ -->
+    <footer class="footer">
+        <div class="footer__inner">
+            <p class="footer__text" data-i18n="footer.copyright">&copy; 2026 Bao Vinci. All rights reserved.</p>
+            <div class="footer__links">
+                <a href="#" class="footer__link" data-i18n="footer.academicProfile">Academic Profile</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top" data-i18n-aria-label="projectPages.common.backToTop">
+        <svg class="back-to-top__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+    </button>
+
+    <!-- JS -->
+    <script src="js/main.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/animation.js"></script>
+    <script src="js/project-loader.js"></script>
+    <script src="js/viewer-manager.js"></script>
+    <script src="js/i18n.js" defer></script>
+</body>
+</html>

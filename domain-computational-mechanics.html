@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="domain--blue">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Computational Mechanics — CFD, FEA, and multiphysics simulation portfolio">
+    <title>Computational Mechanics | Bao Vinci</title>
+
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/domain-page.css">
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <nav class="nav" id="nav">
+        <div class="nav__inner">
+            <a href="index.html" class="nav__logo">Bao Vinci</a>
+            <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation menu">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="nav__links" id="navLinks">
+                <a href="index.html" class="nav__link" data-i18n="nav.home">Home</a>
+                <a href="domain-computational-mechanics.html" class="nav__link nav__link--active" data-i18n="nav.computationalMechanics">Computational Mechanics</a>
+                <a href="domain-mechanical-design.html" class="nav__link" data-i18n="nav.mechanicalDesign">Mechanical Design</a>
+                <a href="domain-intelligent-engineering.html" class="nav__link" data-i18n="nav.intelligentEngineering">Engineering Automation</a>
+                <button type="button" class="nav__link nav__link--lang" data-i18n-toggle data-i18n="nav.langToggle">中文</button>
+            </div>
+        </div>
+    </nav>
+    <div class="nav__overlay" id="navOverlay"></div>
+
+    <!-- 领域 Hero -->
+    <section class="domain-hero">
+        <div class="domain-hero__deco domain-hero__deco--ring"></div>
+        <div class="domain-hero__deco domain-hero__deco--dots"></div>
+        <div class="domain-hero__content">
+            <p class="domain-hero__pre-title" data-i18n="domainPages.computationalMechanics.domainNumber">Domain 01</p>
+            <h1 class="domain-hero__title" data-i18n="domainPages.computationalMechanics.title">Computational Mechanics</h1>
+            <p class="domain-hero__desc" data-i18n="domainPages.computationalMechanics.desc">
+                A deep foundation in computational solid mechanics — spanning nonlinear FEA, material modeling, and numerical methods for structural analysis. Emphasis on Abaqus and MATLAB for simulation workflows.
+            </p>
+            <div class="domain-hero__stats">
+                <div class="domain-hero__stat">
+                    <div class="domain-hero__stat-value" id="cmProjectCount">—</div>
+                    <div class="domain-hero__stat-label" data-i18n="domainPages.common.projects">Projects</div>
+                </div>
+                <div class="domain-hero__stat">
+                    <div class="domain-hero__stat-value" data-i18n="domainPages.computationalMechanics.coreMethodsValue">Nonlinear FEA</div>
+                    <div class="domain-hero__stat-label" data-i18n="domainPages.common.coreMethods">Core Methods</div>
+                </div>
+                <div class="domain-hero__stat">
+                    <div class="domain-hero__stat-value" data-i18n="domainPages.computationalMechanics.capabilityValue">Simulation</div>
+                    <div class="domain-hero__stat-label" data-i18n="domainPages.common.capability">Capability</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 子领域导航 -->
+    <nav class="domain-tabs">
+        <div class="container">
+            <button class="btn btn--primary btn--sm domain-tab active" data-filter="all" data-i18n="domainPages.computationalMechanics.tabs.all">All</button>
+            <button class="btn btn--secondary btn--sm domain-tab" data-filter="fea" data-i18n="domainPages.computationalMechanics.tabs.fea">Nonlinear FEA</button>
+            <button class="btn btn--secondary btn--sm domain-tab" data-filter="material" data-i18n="domainPages.computationalMechanics.tabs.material">Material Modeling</button>
+            <button class="btn btn--secondary btn--sm domain-tab" data-filter="contact" data-i18n="domainPages.computationalMechanics.tabs.contact">Contact Mechanics</button>
+            <button class="btn btn--secondary btn--sm domain-tab" data-filter="dynamics" data-i18n="domainPages.computationalMechanics.tabs.dynamics">Structural Dynamics</button>
+        </div>
+    </nav>
+
+    <!-- 项目列表 -->
+    <section class="domain-projects">
+        <div class="container">
+            <div class="domain-projects__grid" id="domainProjects">
+                <!-- JS 动态渲染 -->
+            </div>
+            <!-- 空状态（JS 在无项目时显示） -->
+            <div class="empty-state" id="emptyState" style="display:none;">
+                <svg class="empty-state__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zM9 17V7"/></svg>
+                <h3 class="empty-state__title" data-i18n="domainPages.common.projectsComingSoon">Projects Coming Soon</h3>
+                <p class="empty-state__desc" data-i18n="domainPages.computationalMechanics.emptyDesc">Computational mechanics projects are being prepared. Check back soon for nonlinear FEA, material modeling, and structural dynamics case studies.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部三领域导航 -->
+    <section class="domain-nav-bottom">
+        <div class="container">
+            <h2 class="domain-nav-bottom__title" data-i18n="domainPages.common.exploreOtherDomains">Explore Other Domains</h2>
+            <div class="domain-nav-bottom__grid">
+                <div class="domain-nav-card domain-nav-card--active">
+                    <h3 class="domain-nav-card__title" data-i18n="nav.computationalMechanics">Computational Mechanics</h3>
+                    <p class="domain-nav-card__desc" data-i18n="domainPages.computationalMechanics.navCardDesc">Nonlinear FEA, Material Modeling, Contact Mechanics, Structural Dynamics</p>
+                </div>
+                <a href="domain-mechanical-design.html" class="domain-nav-card">
+                    <h3 class="domain-nav-card__title" data-i18n="nav.mechanicalDesign">Mechanical Design</h3>
+                    <p class="domain-nav-card__desc" data-i18n="domainPages.mechanicalDesign.navCardDesc">CAD, Parametric Modeling, FEA Validation, Manufacturable Design</p>
+                </a>
+                <a href="domain-intelligent-engineering.html" class="domain-nav-card">
+                    <h3 class="domain-nav-card__title" data-i18n="nav.intelligentEngineering">Engineering Automation</h3>
+                    <p class="domain-nav-card__desc" data-i18n="domainPages.intelligentEngineering.navCardDesc">Python/MATLAB Automation, Parametric Design, Optimization Algorithms</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer__inner">
+            <p class="footer__text" data-i18n="footer.copyright">&copy; 2026 Bao Vinci. All rights reserved.</p>
+            <div class="footer__links">
+                <a href="#" class="footer__link" data-i18n="footer.academicProfile">Academic Profile</a>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg class="back-to-top__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+    </button>
+
+    <script src="js/main.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/animation.js"></script>
+    <script src="js/project-loader.js"></script>
+    <script src="js/viewer-manager.js"></script>
+    <script src="js/i18n.js" defer></script>
+</body>
+</html>
